@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Property Enquiry Form | Harsh Enterprises</title>
+
+<meta name="description"
+content="Submit your property enquiry with Harsh Enterprises for flats, villas and commercial properties.">
+
+<meta name="robots" content="index,follow">
+
+<link rel="canonical"
+href="https://www.enterharsh.in/form.html">
+
+<!-- jsPDF CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body{
+  font-family:Segoe UI,Arial;
+  background:#f4f6f8;
+  padding:20px;
+}
+.form-wrap{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+h1{
+text-align:center
+}
+.section{
+  border:1px solid #ccc;
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:6px;
+}
+.row{
+  display:flex;
+  gap:10px;
+  margin-bottom:8px;
+}
+label{
+min-width:150px;
+font-weight:600}
+input,textarea{
+flex:1;
+padding:6px;
+}
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+button{
+  padding:10px 16px;
+  font-weight:600;
+  cursor:pointer;
+}
+.whatsapp{
+background:#25D366;
+color:#fff;
+border:none
+}
+.pdf{
+background:#0b5ed7;
+color:#fff;
+border:none
+}
+select{
+    width:100%;
+    padding:10px;
+    height:45px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    background:#fff;
+}
+
+.source-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+
+        .back-btn{
+            display:inline-block;
+            margin-top:30px;
+            text-decoration:none;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            color:white;
+            padding:12px 25px;
+            border-radius:30px;
+            transition:0.3s;
+        }
+
+        .back-btn:hover{
+            transform:translateY(-3px);
+        }
+/* 📱 MOBILE RESPONSIVE */
+/* ===================== */
+@media (max-width: 768px){
+
+  body{
+    padding:10px;
+  }
+
+  .form-wrap{
+    padding:15px;
+  }
+
+  /* Stack rows */
+  .row{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  label{
+    min-width:auto;
+    margin-bottom:4px;
+  }
+
+  input, textarea{
+    width:100%;
+  }
+
+  /* Checkbox grid wrap */
+  .source-grid,
+  .inline-options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* Buttons full width */
+  .actions{
+    flex-direction:column;
+  }
+
+  .actions button{
+    width:100%;
+  }
+}
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="topbar">
+        <div class="logo-section">
+             <div class="logo1">
+               <img src="images/he_logo3-removebg-preview_result.webp" alt="Harsh Enterprises Logo" loading="lazy">
+            </div>
+            <div class="text">
+                <h1>Harsh Enterprises - Real Estate Consultant in Badlapur</h1>
+                <p>Trusted Real Estate Partners</p>
+            </div>
+        </div>
+        <div class="right-info">
+            <a href="https://www.facebook.com/share/15KzAWXG4Lb/" title="Facebook"><img src="images/facebook_result.webp" alt="facebook logo" loading="lazy"></a>
+            <a href="https://www.instagram.com/harshenterprises.7979?igsh=MW8wdmYxZTlxMDE1cQ==" title="Instagram"><img src="images/instagram_result.webp"alt="instagram logo" loading="lazy"></a>
+            <a href="https://wa.me/9320658734" title="WhatsApp"><img src="images/whatsapp_result.webp" alt="whatsapp logo" loading="lazy"></a>
+            <a href="https://www.youtube.com/@HARSHENTERPRISES-z4y" title="YouTube"><img src="images/youtube_result.webp" alt="youtube logo" loading="lazy"></a>
+            <a href="https://maps.app.goo.gl/BYBpLRZqZDM6XDKi6" title="Location"><img src="images/goggle map_result.webp" alt="google map logo"loading="lazy"></a>
+        </div>
+    </div>
+<!--End Topbar-->
+
+<!--this is a Header-->
+    <header>
+        <nav>
+            <a href="#ready-to-move" class="nav-link">Ready to Move</a>
+            <a href="#top-highlighted" class="nav-link">Top Highlighted</a>
+            <a href="#recommended" class="nav-link">Commercial Property</a>
+            <a href="#Trusted" class="nav-link">Under Construction</a>
+            <a href="#high-demand" class="nav-link">Villas</a>
+        </nav>
+    </header>
+<!--End Header-->
+
+<div class="form-wrap">
+
+<h1>Enquiry Form</h1>
+
+<div class="row">
+  <label>Form No</label>
+  <input id="formNo">
+  <label>Date</label>
+  <input id="date" type="date">
+</div>
+
+<div class="section">
+<h3>PERSONAL INFO</h3>
+<div class="row"><label>Name *</label><input id="name"></div>
+<div class="row"><label>Age</label><input id="age"></div>
+<div class="row"><label>Phone *</label><input id="phone"></div>
+<div class="row"><label>Email</label><input id="email"></div>
+<div class="row"><label>Address</label><input id="address"></div>
+<div class="row">
+<label>Interested In</label>
+
+<select id="interest">
+    <option value="">Select Property Type</option>
+    <option value="1 BHK">1 BHK</option>
+    <option value="2 BHK">2 BHK</option>
+    <option value="3 BHK">3 BHK</option>
+    <option value="4 BHK">4 BHK</option>
+    <option value="Penthouse">Penthouse</option>
+    <option value="Villa">Villa</option>
+    <option value="Commercial">Commercial</option>
+</select>
+</div>
+
+<div class="row">
+<label>Budget</label>
+
+<select id="budget">
+    <option value="">Select Budget</option>
+    <option value="20-30 Lakhs">20-30 Lakhs</option>
+    <option value="30-40 Lakhs">30-40 Lakhs</option>
+    <option value="40-50 Lakhs">40-50 Lakhs</option>
+    <option value="50-75 Lakhs">50-75 Lakhs</option>
+    <option value="75L - 1Cr">75L - 1Cr</option>
+    <option value="1Cr+">1Cr+</option>
+</select>
+</div>
+
+      
+    </section>
+
+    <!-- Source of Information -->
+    <section class="section" aria-labelledby="source-info">
+      <h2 id="source-info">SOURCE OF INFORMATION</h2>
+
+      <div class="source-grid" style="margin-bottom:10px;">
+        <label class="checkbox-inline"><input type="checkbox" name="source" value="Hoardings"/> Hoardings</label>
+        <label class="checkbox-inline"><input type="checkbox" name="source" value="Friends"/> Friends</label>
+        <label class="checkbox-inline"><input type="checkbox" name="source" value="Digital Ads"/> Digital Ads</label>
+        <label class="checkbox-inline"><input type="checkbox" name="source" value="Existing Customer"/> Existing Customer</label>
+        <label class="checkbox-inline"><input type="checkbox" name="source" value="Train"/> Train</label>
+        <label class="checkbox-inline"><input type="checkbox" name="source" value="Online Portal"/> Online Portal</label>
+        <label class="checkbox-inline"><input type="checkbox" name="source" value="Walking's"/> Walking's</label>
+        <label class="checkbox-inline"><input type="checkbox" name="source" value="Pre-Sales"/> Pre-Sales</label>
+        <label class="checkbox-inline"><input type="checkbox" name="source" value="Vehicle Branding"/> Vehicle Branding</label>
+      </div>
+    </section>
+
+
+<div class="section">
+<h3>REMARK</h3>
+<textarea id="remark"></textarea>
+</div>
+
+<div class="actions">
+<button class="pdf" onclick="generatePDF()">Generate PDF</button>
+<button class="whatsapp" onclick="sendWhatsApp()">Send WhatsApp</button>
+</div>
+  <a href="index.html" class="back-btn">
+    ← Back to Home
+</a>
+</div>
+  
+ <!-- Footer -->
+
+        <footer>
+  <a href="Privacy Policy Page.html">Privacy Policy</a>
+  |
+  <a href="terms.html">Terms & Conditions</a>
+  |
+  <a href="Disclaimer.html">Disclaimer</a>
+  |
+  <a href="Sitemap.html">Sitemap</a>
+
+   <p>© 2026 Harsh Enterprises. All Rights Reserved. | Developed by <a href=" https://tejuzzz92003.github.io/PROTECT-IT-SOLUTIONS/">PROTECT IT SOLUTIONS</a></p>
+</footer>
+<script> window.chtlConfig = { chatbotId:  "5548211785" } </script>
+<script async data-id= "5548211785" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+</body>
+
+
+  <script>
+const q = s => [...document.querySelectorAll(s)];
+
+function collect(){
+  return {
+    formNo: document.getElementById('formNo').value || '-',
+    date: document.getElementById('date').value || '-',
+    name: document.getElementById('name').value.trim() || '-',
+    age: document.getElementById('age').value || '-',
+    phone: document.getElementById('phone').value.trim() || '-',
+    email: document.getElementById('email').value || '-',
+    address: document.getElementById('address').value || '-',
+    interest: document.getElementById('interest').value || '-',
+budget: document.getElementById('budget').value || '-',
+    remark: document.getElementById('remark').value || '-'
+  
+  }
+}
+
+
+
+/* ---------------- WHATSAPP ---------------- */
+function sendWhatsApp(){
+  const d = collect();
+  if(d.name==='-' || d.phone==='-'){
+    alert("Name & Phone required");
+    return;
+  }
+
+  const msg = `
+📋 *Enquiry Form*
+Form No: ${d.formNo}
+Date: ${d.date}
+
+*Name:* ${d.name}
+*Age:* ${d.age}
+*Phone:* ${d.phone}
+*Email:* ${d.email}
+*Address:* ${d.address}
+
+*Interested:* ${d.interest}
+*Budget:* ${d.budget}
+
+*Remark:* ${d.remark}
+`;
+
+  const phoneNo = "919320658734";
+  window.open(`https://wa.me/${phoneNo}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+/* ---------------- PDF ---------------- */
+function generatePDF(){
+  const d = collect();
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF();
+
+  let y = 15;
+  pdf.setFontSize(14);
+  pdf.text("ENQUIRY FORM", 80, y);
+  y+=10;
+
+  pdf.setFontSize(10);
+  for(const [k,v] of Object.entries(d)){
+    pdf.text(`${k.toUpperCase()} : ${v}`, 10, y);
+    y+=8;
+  }
+
+  pdf.save(`Enquiry_${d.name}.pdf`);
+}
+
+/* today date */
+date.value = new Date().toISOString().split('T')[0];
+
+
+</script>
+</body>
+</html>
